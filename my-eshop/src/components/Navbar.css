@@ -12,17 +12,20 @@
     font-family: 'Arial', sans-serif;
     font-weight: bold;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
 .navbar .logo {
+    flex: 1; /* Allow logo to take up space */
+    text-align: center; /* Center the text */
     font-size: 24px;
-    margin-left: 20px;
 }
 
 .navbar nav {
-    margin-right: 20px;
+    flex: 1; /* Allow nav items to take up space */
+    display: flex;
+    justify-content: flex-end; /* Align nav items to the right */
 }
 
 .navbar a {
@@ -33,4 +36,17 @@
 
 .navbar a:hover {
     text-decoration: underline;
+}
+
+/* Adjust burger menu button position */
+.burger-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 20px; /* Ensure it doesn’t overlap with the header content */
+    z-index: 1001;
 }

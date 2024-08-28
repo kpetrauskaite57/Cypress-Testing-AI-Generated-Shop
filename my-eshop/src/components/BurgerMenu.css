@@ -1,57 +1,41 @@
-/* Burger Menu Specific Styles */
 .burger-menu {
-    background-color: #444;
-    color: white;
-    width: 250px;
-    padding: 20px;
-    position: fixed;
-    top: 70px; /* Adjusted to make space for the navbar */
+    position: absolute;
+    top: 70px; /* Adjust if needed to appear below the navbar */
     left: 0;
-    height: calc(100vh - 70px); /* Adjusted to subtract the navbar height */
-    overflow-y: auto;
-    font-family: 'Arial', sans-serif;
-    transition: transform 0.3s ease;
-    transform: translateX(-100%); /* Initially hidden */
-}
-
-.burger-menu.show {
-    transform: translateX(0); /* Show menu */
-}
-
-.burger-menu h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.burger-menu ul {
-    list-style-type: none;
+    background: #fff;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 250px; /* Adjust as needed */
+  }
+  
+  .burger-menu h2 {
+    margin: 0;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+  }
+  
+  .burger-menu ul {
+    list-style: none;
     padding: 0;
-}
-
-.burger-menu li {
-    padding: 10px 0;
-    border-bottom: 1px solid #555;
-}
-
-.burger-menu button {
-    background: none;
-    border: none;
-    color: white;
-    text-align: left;
-    font-size: 16px;
+    margin: 0;
+  }
+  
+  .burger-menu ul li {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .burger-menu ul li button {
     width: 100%;
-    cursor: pointer;
-}
-
-.burger-menu button:hover {
-    background-color: #555;
-}
-
-/* Burger Button Style */
-.burger-button {
+    padding: 10px;
     background: none;
     border: none;
-    color: white;
-    font-size: 24px;
+    text-align: left;
     cursor: pointer;
-}
+  }
+  
+  .burger-menu ul li button:hover {
+    background-color: #f0f0f0;
+  }
+  

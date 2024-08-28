@@ -1,33 +1,96 @@
-/* General Home Styles */
-.home {
-    display: flex;
-  }
-  
-  /* Deals Section */
-  .deals {
+.home-container {
     padding: 20px;
-    background-color: #f9f9f9;
-    margin-left: 250px; /* Adjust to accommodate the burger menu */
-    flex: 1;
+    text-align: center;
   }
   
-  .deals h2 {
-    font-size: 24px;
+  .welcome-title {
+    font-size: 36px;
     margin-bottom: 20px;
   }
   
-  .deal-item {
+  .deals-title, .featured-books-title {
+    font-size: 28px;
+    margin: 20px 0;
+  }
+  
+  .books-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .book-card {
     background: #fff;
     border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
     padding: 15px;
-    margin-bottom: 15px;
+    width: 200px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  .deal-item h3 {
-    margin-top: 0;
+  .book-image {
+    width: 100%;
+    height: auto;
   }
   
-  .deal-item p {
-    margin: 5px 0;
+  .book-info {
+    margin-top: 10px;
+  }
+  
+  .book-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .book-author {
+    color: #555;
+  }
+  
+  .book-price {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .original-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 10px;
+  }
+  
+  .discounted-price {
+    color: #e00;
+    font-weight: bold;
+  }
+  
+  .book-description {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .book-reviews {
+    margin: 10px 0;
+  }
+  
+  .book-rating {
+    color: #ff0;
+  }
+  
+  .review-count {
+    margin-left: 5px;
+  }
+  
+  .add-to-cart {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #555;
   }
   

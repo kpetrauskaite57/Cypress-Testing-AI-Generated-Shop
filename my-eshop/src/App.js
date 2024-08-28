@@ -10,28 +10,22 @@ import './App.css';
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [selectedBook, setSelectedBook] = useState(null);
 
-  const addToCart = (book, quantity) => {
-    setCart([...cart, { book, quantity }]);
-  };
-
-  const handleCategoryClick = (category) => {
-    // Handle category selection (passed down to BurgerMenu)
-    console.log(`Category selected: ${category}`);
+  const addToCart = (book) => {
+    setCart([...cart, book]);
   };
 
   return (
     <Router>
       <div className="app">
         <Navbar />
-        <BurgerMenu onCategoryClick={handleCategoryClick} />
+        <BurgerMenu />
         <div className="main-content">
           <Routes>
-            <Route path="/" element={<Home setSelectedBook={setSelectedBook} />} />
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/book/:id" element={<BookDetails book={selectedBook} addToCart={addToCart} />} />
+            <Route path="/book/:id" element={<BookDetails addToCart={addToCart} />} />
           </Routes>
         </div>
       </div>
