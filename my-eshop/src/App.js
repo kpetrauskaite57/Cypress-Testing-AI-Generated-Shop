@@ -1,4 +1,3 @@
-// App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -10,7 +9,12 @@ import BookDetails from './components/BookDetails';
 import './App.css';
 
 function App() {
+  const [cart, setCart] = useState([]);
   const [selectedBook, setSelectedBook] = useState(null);
+
+  const addToCart = (book, quantity) => {
+    setCart([...cart, { book, quantity }]);
+  };
 
   return (
     <Router>
@@ -22,7 +26,7 @@ function App() {
             <Route path="/" element={<Home setSelectedBook={setSelectedBook} />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/book/:id" element={<BookDetails book={selectedBook} />} />
+            <Route path="/book/:id" element={<BookDetails book={selectedBook} addToCart={addToCart} />} />
           </Routes>
         </div>
       </div>

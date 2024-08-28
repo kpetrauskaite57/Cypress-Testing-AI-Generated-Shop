@@ -1,0 +1,30 @@
+/* src/components/BookDetails.css */
+.book-details {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-left: 250px; /* Adjust this to account for the burger menu width */
+  }
+  
+  .book-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .book-details p {
+    margin: 5px 0;
+  }
+  
+  .book-details .reviews {
+    margin-top: 20px;
+  }
+  
+  .book-details .new-review {
+    margin-top: 20px;
+  }
+  
+  .book-details .quantity {
+    margin-top: 20px;
+  }
+  
