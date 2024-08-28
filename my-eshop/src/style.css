@@ -1,119 +1,130 @@
-/* style.css */
-body {
-  font-family: Arial, sans-serif;
+body, html {
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  display: flex;
 }
 
 .navbar {
   background-color: #333;
-  padding: 1rem;
+  color: white;
+  padding: 10px;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
-.navbar h1 {
-  color: #fff;
+.navbar ul li {
+  margin-right: 20px;
 }
 
-.navbar a {
-  color: #fff;
-  margin-left: 1rem;
+.navbar ul li a {
+  color: white;
   text-decoration: none;
 }
 
-.navbar a:hover {
-  text-decoration: underline;
-}
-
-.home {
-  padding: 2rem;
-}
-
-.product-grid {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.product-card {
-  background-color: #f4f4f4;
-  padding: 1rem;
-  border: 1px solid #ddd;
+.burger-menu {
   width: 200px;
-  text-align: center;
-}
-
-.product-card img {
-  max-width: 100%;
-}
-
-.product-card button {
   background-color: #333;
-  color: #fff;
-  padding: 0.5rem;
-  border: none;
-  cursor: pointer;
-  margin-top: 1rem;
+  color: white;
+  padding: 10px;
 }
 
-.product-card button:hover {
+.burger-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.burger-menu li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.burger-menu li:hover {
   background-color: #555;
 }
 
-.form-container {
-  padding: 2rem;
-  max-width: 400px;
-  margin: auto;
-}
-
-.form-container form {
+.content {
   display: flex;
-  flex-direction: column;
+  flex-grow: 1;
+  padding: 20px;
 }
 
-.form-container label {
-  margin-top: 1rem;
+.book-list {
+  width: 250px;
+  margin-right: 20px;
 }
 
-.form-container input {
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.form-container button {
-  margin-top: 1rem;
-  padding: 0.5rem;
-  background-color: #333;
-  color: #fff;
-  border: none;
+.book-item {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
   cursor: pointer;
 }
 
-.form-container button:hover {
-  background-color: #555;
+.book-item:hover {
+  background-color: #f0f0f0;
+}
+
+.book-details {
+  flex-grow: 1;
 }
 
 .cart {
-  padding: 2rem;
+  width: 200px;
+  background-color: #f8f8f8;
+  padding: 10px;
 }
 
-.cart-item {
-  background-color: #f4f4f4;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ddd;
+.register-form {
+  max-width: 500px;
+  margin: 20px auto;
 }
 
-.cart button {
+.register-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.register-form button {
+  padding: 10px;
   background-color: #333;
-  color: #fff;
-  padding: 0.5rem;
+  color: white;
   border: none;
   cursor: pointer;
 }
 
-.cart button:hover {
+.register-form button:hover {
   background-color: #555;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
 }

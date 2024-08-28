@@ -1,24 +1,21 @@
 import React from 'react';
-import '../style.css';
 
-
-function Cart() {
-  // Dummy cart items
-  const cartItems = [
-    { id: 1, name: 'Product 1', price: 29.99 },
-    { id: 2, name: 'Product 2', price: 19.99 }
-  ];
+function Cart({ cart }) {
+  const totalPrice = cart.reduce((total, item) => total + item.book.price * item.quantity, 0);
 
   return (
     <div className="cart">
-      <h2>Your Cart</h2>
-      {cartItems.map(item => (
-        <div key={item.id} className="cart-item">
-          <h3>{item.name}</h3>
-          <p>${item.price}</p>
-        </div>
-      ))}
-      <button>Proceed to Checkout</button>
+      <h3>Your Cart</h3>
+      {cart.length === 0 ? (
+        <p>Your cart is empty.</p>
+      ) : (
+        cart.map((item, index) => (
+          <div key={index}>
+            <p>{item.book.title} - {item.quantity} x ${item.book.price}</p>
+          </div>
+        ))
+      )}
+      <h4>Total: ${totalPrice.toFixed(2)}</h4>
     </div>
   );
 }
