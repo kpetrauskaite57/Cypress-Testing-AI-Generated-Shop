@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../style.css';
+import './Login.css';  // Ensure this path is correct
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -51,20 +51,28 @@ function Login() {
     <div className="form-container">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <label>Email</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        <div className="form-group">
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder=" "
+          />
+          <label htmlFor="email">Email</label>
+        </div>
         {errors.email && <p className="error">{errors.email}</p>}
 
-        <label>Password</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <div className="form-group">
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder=" "
+          />
+          <label htmlFor="password">Password</label>
+        </div>
         {errors.password && <p className="error">{errors.password}</p>}
         
         {errors.general && <p className="error">{errors.general}</p>}
