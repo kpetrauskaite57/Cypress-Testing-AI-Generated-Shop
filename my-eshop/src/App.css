@@ -1,0 +1,21 @@
+/* App.css */
+
+/* Basic reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Main app container styling */
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Adjustments for main content area */
+  .main-content {
+    flex: 1;
+  }
+  

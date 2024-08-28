@@ -1,19 +1,11 @@
-import React, { useState } from 'react';
+// src/components/BookDetails.js
+import React from 'react';
+import books from '../data/bookData';
 
-function BookDetails({ book, addToCart }) {
-  const [quantity, setQuantity] = useState(1);
-  const [newReview, setNewReview] = useState("");
+const BookDetails = ({ bookId, category }) => {
+  const book = books[category]?.find((b) => b.id === bookId);
 
-  const handleAddToCart = () => {
-    addToCart(book, quantity);
-  };
-
-  const handleAddReview = () => {
-    if (newReview) {
-      book.reviews.push({ user: "Anonymous", comment: newReview, rating: 5 });
-      setNewReview("");
-    }
-  };
+  if (!book) return <div>Book not found</div>;
 
   return (
     <div className="book-details">
@@ -21,36 +13,12 @@ function BookDetails({ book, addToCart }) {
       <p><strong>Author:</strong> {book.author}</p>
       <p><strong>Genre:</strong> {book.genre}</p>
       <p><strong>Year:</strong> {book.year}</p>
-      <p>{book.description}</p>
-      <p><strong>Price:</strong> ${book.price}</p>
-
-      <div className="cart-options">
-        <label>Quantity: </label>
-        <input
-          type="number"
-          value={quantity}
-          onChange={(e) => setQuantity(Number(e.target.value))}
-          min="1"
-        />
-        <button onClick={handleAddToCart}>Add to Cart</button>
-      </div>
-
-      <div className="reviews">
-        <h3>Customer Reviews</h3>
-        {book.reviews.map((review, index) => (
-          <div key={index}>
-            <p><strong>{review.user}:</strong> {review.comment}</p>
-          </div>
-        ))}
-        <textarea
-          value={newReview}
-          onChange={(e) => setNewReview(e.target.value)}
-          placeholder="Write a review..."
-        ></textarea>
-        <button onClick={handleAddReview}>Submit Review</button>
+      <p><strong>Description:</strong> {book.description}</p>
+      <div className="add-to-cart">
+        <button>Add to Cart</button>
       </div>
     </div>
   );
-}
+};
 
 export default BookDetails;

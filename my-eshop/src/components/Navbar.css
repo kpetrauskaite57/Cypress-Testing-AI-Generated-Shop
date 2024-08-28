@@ -1,0 +1,32 @@
+/* src/components/Navbar.css */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    font-size: 24px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 70px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Navbar Links */
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .navbar a:hover {
+    color: #ddd;
+  }
+  

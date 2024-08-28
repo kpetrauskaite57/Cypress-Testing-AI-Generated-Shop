@@ -1,0 +1,43 @@
+/* Burger Menu Specific Styles */
+.burger-menu {
+    background-color: #444;
+    color: white;
+    width: 250px;
+    padding: 20px;
+    position: fixed;
+    top: 70px; /* Adjusted to make space for the navbar */
+    left: 0;
+    height: calc(100vh - 70px); /* Adjusted to subtract the navbar height */
+    overflow-y: auto;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .burger-menu h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .burger-menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .burger-menu li {
+    padding: 10px 0;
+    border-bottom: 1px solid #555;
+  }
+  
+  .burger-menu button {
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .burger-menu button:hover {
+    background-color: #555;
+  }
+  

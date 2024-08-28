@@ -1,24 +1,24 @@
-import React from 'react';
-import products from '../data/books';
-import '../style.css';
+// src/components/Home.js
+import React, { useState } from 'react';
+import BookList from './BookList';
+import BurgerMenu from './BurgerMenu';
+import bookData from '../data/bookData'; // Assuming bookData is being used
 
+const Home = () => {
+  const [books, setBooks] = useState(bookData);
 
-function Home() {
+  const onCategoryClick = (category) => {
+    // Filter books based on category
+    const filteredBooks = bookData.filter(book => book.category === category);
+    setBooks(filteredBooks);
+  };
+
   return (
     <div className="home">
-      <h2>Products</h2>
-      <div className="product-grid">
-        {products.map(product => (
-          <div key={product.id} className="product-card">
-            <img src={product.image} alt={product.name} />
-            <h3>{product.name}</h3>
-            <p>${product.price}</p>
-            <button>Add to Cart</button>
-          </div>
-        ))}
-      </div>
+      <BurgerMenu onCategoryClick={onCategoryClick} />
+      <BookList books={books} />
     </div>
   );
-}
+};
 
 export default Home;

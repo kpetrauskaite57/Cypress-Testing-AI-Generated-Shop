@@ -1,18 +1,18 @@
+// src/components/BurgerMenu.js
 import React from 'react';
+import './BurgerMenu.css';
 
-function BurgerMenu({ categories, setCategory }) {
+const BurgerMenu = ({ onCategoryClick }) => {
   return (
     <div className="burger-menu">
-      <h3>Categories</h3>
+      <h2>Categories</h2>
       <ul>
-        {categories.map((category, index) => (
-          <li key={index} onClick={() => setCategory(category)}>
-            {category}
-          </li>
-        ))}
+        <li><button onClick={() => onCategoryClick('Fiction')}>Fiction Books</button></li>
+        <li><button onClick={() => onCategoryClick('Kids')}>Kids' Books</button></li>
+        {/* Add more categories as needed */}
       </ul>
     </div>
   );
-}
+};
 
 export default BurgerMenu;
