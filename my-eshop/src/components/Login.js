@@ -1,13 +1,50 @@
 import React, { useState } from 'react';
-import '../style.css'; // Ensure this path is correct
+import '../style.css';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState('');
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    // Check if fields are empty
+    if (!email) newErrors.email = 'Email is required';
+    if (!password) newErrors.password = 'Password is required';
+
+    // Validate email format
+    if (email && !/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = 'Invalid email format';
+    }
+
+    // Dummy check for user existence and password
+    // Replace with actual authentication logic
+    if (email && password && !validateCredentials(email, password)) {
+      newErrors.general = 'Invalid email or password';
+    }
+
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const validateCredentials = (email, password) => {
+    // Replace this logic with actual authentication
+    // For demo purposes, assume these are the correct credentials
+    return email === 'user@example.com' && password === 'password123';
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle login
+    if (validateForm()) {
+      setSuccessMessage('Congratulations! You have successfully logged in.');
+      // Clear form and errors after successful login
+      setEmail('');
+      setPassword('');
+      setErrors({});
+    }
   };
 
   return (
@@ -20,14 +57,22 @@ function Login() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+        {errors.email && <p className="error">{errors.email}</p>}
+
         <label>Password</label>
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        {errors.password && <p className="error">{errors.password}</p>}
+        
+        {errors.general && <p className="error">{errors.general}</p>}
+        
         <button type="submit">Login</button>
       </form>
+      
+      {successMessage && <p className="success">{successMessage}</p>}
     </div>
   );
 }
