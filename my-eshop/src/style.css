@@ -1,0 +1,119 @@
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #333;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  color: #fff;
+}
+
+.navbar a {
+  color: #fff;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.home {
+  padding: 2rem;
+}
+
+.product-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  width: 200px;
+  text-align: center;
+}
+
+.product-card img {
+  max-width: 100%;
+}
+
+.product-card button {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.product-card button:hover {
+  background-color: #555;
+}
+
+.form-container {
+  padding: 2rem;
+  max-width: 400px;
+  margin: auto;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  margin-top: 1rem;
+}
+
+.form-container input {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.form-container button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #555;
+}
+
+.cart {
+  padding: 2rem;
+}
+
+.cart-item {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+}
+
+.cart button {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.cart button:hover {
+  background-color: #555;
+}
