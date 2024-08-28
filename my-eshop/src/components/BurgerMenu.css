@@ -1,15 +1,5 @@
 /* Burger Menu Specific Styles */
-.burger-button {
-    background: #333;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 24px;
-    z-index: 1001; /* Ensure it's above other content */
-  }
-  
-  .burger-menu {
+.burger-menu {
     background-color: #444;
     color: white;
     width: 250px;
@@ -20,25 +10,30 @@
     height: calc(100vh - 70px); /* Adjusted to subtract the navbar height */
     overflow-y: auto;
     font-family: 'Arial', sans-serif;
-    z-index: 1000; /* Ensure it's above other content */
-  }
-  
-  .burger-menu h2 {
+    transition: transform 0.3s ease;
+    transform: translateX(-100%); /* Initially hidden */
+}
+
+.burger-menu.show {
+    transform: translateX(0); /* Show menu */
+}
+
+.burger-menu h2 {
     font-size: 20px;
     margin-bottom: 10px;
-  }
-  
-  .burger-menu ul {
+}
+
+.burger-menu ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  .burger-menu li {
+}
+
+.burger-menu li {
     padding: 10px 0;
     border-bottom: 1px solid #555;
-  }
-  
-  .burger-menu button {
+}
+
+.burger-menu button {
     background: none;
     border: none;
     color: white;
@@ -46,9 +41,17 @@
     font-size: 16px;
     width: 100%;
     cursor: pointer;
-  }
-  
-  .burger-menu button:hover {
+}
+
+.burger-menu button:hover {
     background-color: #555;
-  }
-  
+}
+
+/* Burger Button Style */
+.burger-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}

@@ -1,11 +1,10 @@
-// src/components/Navbar.js
 import React from 'react';
 import './Navbar.css';
 
 const Navbar = () => {
   return (
     <header className="navbar">
-      <div className="logo">My E-Shop</div>
+      <div className="logo">Bookstore</div>
       <nav>
         <a href="/">Home</a>
         <a href="/login">Login</a>

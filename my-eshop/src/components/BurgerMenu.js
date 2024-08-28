@@ -47,4 +47,3 @@ const BurgerMenu = ({ onCategoryClick }) => {
 };
 
 export default BurgerMenu;
-
