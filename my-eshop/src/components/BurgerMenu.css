@@ -1,5 +1,15 @@
 /* Burger Menu Specific Styles */
-.burger-menu {
+.burger-button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1001; /* Ensure it's above other content */
+  }
+  
+  .burger-menu {
     background-color: #444;
     color: white;
     width: 250px;
@@ -10,6 +20,7 @@
     height: calc(100vh - 70px); /* Adjusted to subtract the navbar height */
     overflow-y: auto;
     font-family: 'Arial', sans-serif;
+    z-index: 1000; /* Ensure it's above other content */
   }
   
   .burger-menu h2 {

@@ -1,0 +1,33 @@
+/* General Home Styles */
+.home {
+    display: flex;
+  }
+  
+  /* Deals Section */
+  .deals {
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-left: 250px; /* Adjust to accommodate the burger menu */
+    flex: 1;
+  }
+  
+  .deals h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .deal-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .deal-item h3 {
+    margin-top: 0;
+  }
+  
+  .deal-item p {
+    margin: 5px 0;
+  }
+  

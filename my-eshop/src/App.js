@@ -16,11 +16,16 @@ function App() {
     setCart([...cart, { book, quantity }]);
   };
 
+  const handleCategoryClick = (category) => {
+    // Handle category selection (passed down to BurgerMenu)
+    console.log(`Category selected: ${category}`);
+  };
+
   return (
     <Router>
       <div className="app">
         <Navbar />
-        <BurgerMenu />
+        <BurgerMenu onCategoryClick={handleCategoryClick} />
         <div className="main-content">
           <Routes>
             <Route path="/" element={<Home setSelectedBook={setSelectedBook} />} />

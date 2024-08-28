@@ -4,9 +4,9 @@ import BurgerMenu from './BurgerMenu';
 import BookDetails from './BookDetails';
 import bookData from '../data/bookData';
 
-const Home = () => {
+const Home = ({ setSelectedBook }) => {
   const [books, setBooks] = useState([]);
-  const [selectedBook, setSelectedBook] = useState(null);
+  const [selectedBook, setSelectedBookState] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('');
   const [cart, setCart] = useState([]);
 
@@ -18,11 +18,11 @@ const Home = () => {
     } else {
       setBooks([]);
     }
-    setSelectedBook(null); // Reset the selected book
+    setSelectedBookState(null); // Reset the selected book
   };
 
   const handleBookClick = (book) => {
-    setSelectedBook(book);
+    setSelectedBookState(book);
   };
 
   const addToCart = (book, quantity) => {
@@ -40,7 +40,23 @@ const Home = () => {
             addToCart={addToCart} 
           />
         ) : (
-          <BookList books={books} onBookClick={handleBookClick} />
+          <>
+            <div className="deals">
+              <h2>Deals</h2>
+              {/* Add sample deals here */}
+              <div className="deal-item">
+                <h3>Deal of the Day</h3>
+                <p>50% off on selected books!</p>
+                {/* Add more details about the deal */}
+              </div>
+              <div className="deal-item">
+                <h3>Weekend Special</h3>
+                <p>Buy 2 get 1 free on all fiction books.</p>
+                {/* Add more details about the deal */}
+              </div>
+            </div>
+            <BookList books={books} onBookClick={handleBookClick} />
+          </>
         )}
       </div>
     </div>
