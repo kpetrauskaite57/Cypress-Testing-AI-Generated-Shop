@@ -1,16 +1,19 @@
-// src/components/Home.js
 import React, { useState } from 'react';
 import BookList from './BookList';
 import BurgerMenu from './BurgerMenu';
-import bookData from '../data/bookData'; // Assuming bookData is being used
+import bookData from '../data/bookData';
 
-const Home = () => {
-  const [books, setBooks] = useState(bookData);
+const Home = ({ setSelectedBook }) => {
+  const [books, setBooks] = useState([]);
 
   const onCategoryClick = (category) => {
-    // Filter books based on category
-    const filteredBooks = bookData.filter(book => book.category === category);
-    setBooks(filteredBooks);
+    // Filter books based on the selected category
+    const categoryData = bookData.find(cat => cat.category === category);
+    if (categoryData) {
+      setBooks(categoryData.books);
+    } else {
+      setBooks([]); // No books for this category
+    }
   };
 
   return (
