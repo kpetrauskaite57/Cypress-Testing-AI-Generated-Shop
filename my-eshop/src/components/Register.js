@@ -1,7 +1,6 @@
-// src/components/Register.js
-
 import React, { useState } from 'react';
 import Modal from './Modal';
+import '../style.css';
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -21,32 +20,49 @@ function Register() {
   const validateForm = () => {
     const newErrors = {};
 
-    if (!formData.name) newErrors.name = 'Name is required';
-    if (!formData.surname) newErrors.surname = 'Surname is required';
-    if (!formData.email) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email is invalid';
+    // Check for empty fields
+    Object.keys(formData).forEach(key => {
+      if (!formData[key]) {
+        newErrors[key] = `${key.charAt(0).toUpperCase() + key.slice(1)} is required`;
+      }
+    });
+
+    // Validate email format
+    if (formData.email && !/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Invalid email format';
     }
-    if (!formData.password) {
-      newErrors.password = 'Password is required';
-    } else if (formData.password.length < 6) {
+
+    // Validate password length
+    if (formData.password && formData.password.length < 6) {
       newErrors.password = 'Password must be at least 6 characters long';
     }
-    if (!formData.address) newErrors.address = 'Address is required';
-    if (!formData.city) newErrors.city = 'City is required';
-    if (!formData.postcode) newErrors.postcode = 'Postcode is required';
-    if (!formData.phone) newErrors.phone = 'Phone number is required';
+
+    // Validate phone number (basic check)
+    if (formData.phone && !/^\d{10}$/.test(formData.phone)) {
+      newErrors.phone = 'Phone number must be 10 digits';
+    }
 
     setErrors(newErrors);
-
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
+      // Handle successful registration
       setShowSuccess(true);
+      // Clear form and errors after successful registration
+      setFormData({
+        name: '',
+        surname: '',
+        email: '',
+        password: '',
+        address: '',
+        city: '',
+        postcode: '',
+        phone: '',
+      });
+      setErrors({});
     }
   };
 
@@ -135,7 +151,7 @@ function Register() {
 
         <button type="submit">Register</button>
       </form>
-      
+
       <Modal show={showSuccess} onClose={() => setShowSuccess(false)} title="Registration Successful">
         <p>Your account has been created successfully!</p>
       </Modal>

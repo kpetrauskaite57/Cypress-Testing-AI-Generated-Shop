@@ -6,8 +6,8 @@
 }
 
 /* Form Container */
-.form-container {
-  max-width: 400px;
+.register-form {
+  max-width: 500px;
   margin: 50px auto;
   padding: 20px;
   background: #fff;
@@ -16,19 +16,13 @@
 }
 
 /* Form Elements */
-.form-container h2 {
+.register-form h2 {
   margin-bottom: 20px;
   font-size: 24px;
   color: #333;
 }
 
-.form-container label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-.form-container input {
+.register-form input {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
@@ -36,7 +30,7 @@
   border-radius: 5px;
 }
 
-.form-container button {
+.register-form button {
   width: 100%;
   padding: 10px;
   background-color: #333;
@@ -46,7 +40,7 @@
   cursor: pointer;
 }
 
-.form-container button:hover {
+.register-form button:hover {
   background-color: #555;
 }
 
