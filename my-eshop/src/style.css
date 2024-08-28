@@ -5,96 +5,47 @@
   box-sizing: border-box;
 }
 
-/* App Container */
-.app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+/* Form Container */
+.form-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Navbar/Header Styling */
-.navbar {
-  background-color: #333;
-  color: white;
-  padding: 10px 20px;
+/* Form Elements */
+.form-container h2 {
+  margin-bottom: 20px;
   font-size: 24px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  height: 70px;
-  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 8px;
   font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
-/* Main Content */
-.main-content {
-  display: flex;
-  flex: 1;
-}
-
-/* Burger Menu */
-.burger-menu {
-  background-color: #444;
-  color: white;
-  width: 250px;
-  padding: 20px;
-  position: fixed;
-  top: 70px; /* Adjust this to make space for the navbar */
-  left: 0;
-  height: calc(100vh - 70px); /* Adjusted to subtract the navbar height */
-  overflow-y: auto;
-  font-family: 'Arial', sans-serif;
-  z-index: 999;
-}
-
-.burger-menu h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.burger-menu ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.burger-menu li {
-  padding: 10px 0;
-  border-bottom: 1px solid #555;
-}
-
-.burger-menu button {
-  background: none;
-  border: none;
-  color: white;
-  text-align: left;
-  font-size: 16px;
+.form-container input {
   width: 100%;
-  cursor: pointer;
-}
-
-.burger-menu button:hover {
-  background-color: #555;
-}
-
-/* Book List */
-.book-list {
-  margin-left: 250px; /* Adjusted for burger menu width */
-  padding: 20px;
-  flex: 1;
-}
-
-.book-item {
-  border: 1px solid #ddd;
   padding: 10px;
-  width: 180px;
-  text-align: center;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-.book-item:hover {
-  background-color: #f0f0f0;
+.form-container button:hover {
+  background-color: #555;
 }
