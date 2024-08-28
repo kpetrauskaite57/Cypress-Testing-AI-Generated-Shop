@@ -37,9 +37,9 @@ function Register() {
       newErrors.password = 'Password must be at least 6 characters long';
     }
 
-    // Validate phone number (basic check)
-    if (formData.phone && !/^\d{10}$/.test(formData.phone)) {
-      newErrors.phone = 'Phone number must be 10 digits';
+    // Validate phone number (Lithuanian format: +370 followed by 9 digits)
+    if (formData.phone && !/^\+370\d{9}$/.test(formData.phone)) {
+      newErrors.phone = 'Phone number must be in the format: +370xxxxxxxxx';
     }
 
     setErrors(newErrors);
@@ -143,7 +143,7 @@ function Register() {
         <input
           type="text"
           name="phone"
-          placeholder="Phone Number"
+          placeholder="Phone Number (+370xxxxxxxx)"
           value={formData.phone}
           onChange={handleChange}
         />
