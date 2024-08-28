@@ -37,9 +37,10 @@ function Register() {
       newErrors.password = 'Password must be at least 6 characters long';
     }
 
-    // Validate phone number (Lithuanian format: +370 followed by 9 digits)
-    if (formData.phone && !/^\+370\d{9}$/.test(formData.phone)) {
-      newErrors.phone = 'Phone number must be in the format: +370xxxxxxxxx';
+    // Validate phone number format
+    // Phone number should start with +370 and be followed by exactly 8 digits
+    if (formData.phone && !/^\+370\d{8}$/.test(formData.phone)) {
+      newErrors.phone = 'Phone number must be in the format: +370xxxxxxxx';
     }
 
     setErrors(newErrors);
