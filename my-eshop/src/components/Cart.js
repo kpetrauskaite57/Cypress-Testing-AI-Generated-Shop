@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Cart({ cart }) {
-  const totalPrice = cart.reduce((total, item) => total + item.book.price * item.quantity, 0);
+  const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
     <div className="cart">
@@ -11,7 +11,7 @@ function Cart({ cart }) {
       ) : (
         cart.map((item, index) => (
           <div key={index}>
-            <p>{item.book.title} - {item.quantity} x ${item.book.price}</p>
+            <p>{item.title} - {item.quantity} x ${item.price.toFixed(2)}</p>
           </div>
         ))
       )}

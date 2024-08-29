@@ -6,6 +6,8 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
 import BookDetails from './components/BookDetails';
+import Cart from './components/Cart';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -18,7 +20,6 @@ function App() {
   return (
     <Router>
       <div className="app">
-        {/* Use CSS to conditionally display Navbar or BurgerMenu */}
         <Navbar />
         <BurgerMenu className="burger-menu" />
         <div className="main-content">
@@ -29,6 +30,8 @@ function App() {
             <Route path="/book/:id" element={<BookDetails addToCart={addToCart} />} />
           </Routes>
         </div>
+        <Cart cart={cart} />
+        <Footer />
       </div>
     </Router>
   );
