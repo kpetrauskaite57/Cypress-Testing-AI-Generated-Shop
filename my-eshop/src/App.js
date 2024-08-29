@@ -9,7 +9,7 @@ import BookDetails from './components/BookDetails';
 import Cart from './components/Cart';
 import Footer from './components/Footer';
 import './App.css';
-import Faq from './components/FAQ';
+import Faq from './components/faq';
 
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
 
             <Route path="/cart" element={<Cart cart={cart} />} />
             <Route path="/" element={<Home />} />
-            <Route path="/FAQ" element={<FAQ />} /> 
+            <Route path="/faq" element={<faq />} /> 
           </Routes>
         </div>
         <Footer />
