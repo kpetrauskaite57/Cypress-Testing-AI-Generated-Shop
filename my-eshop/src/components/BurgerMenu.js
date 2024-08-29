@@ -1,27 +1,31 @@
+// src/components/BurgerMenu.js
+
 import React, { useState } from 'react';
-import './styles/BurgerMenu.css';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate for navigation
+import './styles/BurgerMenu.css';  // Ensure the path is correct
 
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();  // Use useNavigate for navigation
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <div>
-      <button className="burger-button" onClick={toggleMenu}>☰</button>
-      <div className={`burger-menu ${isOpen ? 'active' : ''}`}>
-        <h2>Menu</h2>
+    <div className="burger-menu">
+      <button onClick={toggleMenu}>
+        {isOpen ? 'Close Menu' : 'Open Menu'}
+      </button>
+      {isOpen && (
         <ul>
-          <li><button onClick={() => window.location.href = '/'}>Home</button></li>
-          <li><button onClick={() => window.location.href = '/login'}>Login</button></li>
-          <li><button onClick={() => window.location.href = '/register'}>Register</button></li>
-          <li><button onClick={() => window.location.href = '/cart'}>Cart</button></li>
+          <li><button onClick={() => navigate('/')}>Home</button></li>
+          <li><button onClick={() => navigate('/login')}>Login</button></li>
+          <li><button onClick={() => navigate('/register')}>Register</button></li>
         </ul>
-      </div>
+      )}
     </div>
   );
-};
+}
 
-export default BurgerMenu;
+export default BurgerMenu;  // Default export

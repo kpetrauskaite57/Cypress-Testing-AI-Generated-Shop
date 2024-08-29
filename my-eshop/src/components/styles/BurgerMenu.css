@@ -1,8 +1,8 @@
 /* BurgerMenu.css */
 
 .burger-menu {
-  display: none; /* Hidden by default, shown only on mobile screens */
-  position: absolute;
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed position to stay visible on scroll */
   top: 70px; /* Adjust if needed to appear below the navbar */
   left: 0;
   background: #fff;
@@ -12,7 +12,7 @@
   width: 250px; /* Adjust as needed */
 }
 
-/* When the menu is active, make it visible */
+/* Show menu when active */
 .burger-menu.active {
   display: block;
 }
