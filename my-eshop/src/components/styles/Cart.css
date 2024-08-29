@@ -1,0 +1,36 @@
+.cart {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .cart h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .cart p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .cart h4 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+  
+  .cart .checkout-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  .cart .checkout-button:hover {
+    background-color: darkgreen;
+  }
+  

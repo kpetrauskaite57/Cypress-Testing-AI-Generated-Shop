@@ -11,7 +11,9 @@ const BookDetails = ({ addToCart }) => {
   }
 
   const handleAddToCart = () => {
-    addToCart(book);
+    if (addToCart) {
+      addToCart(book);
+    }
   };
 
   return (

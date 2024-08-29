@@ -1,48 +1,31 @@
-/* BurgerMenu.css */
-
-.burger-menu {
-  display: none; /* Hidden by default */
-  position: fixed; /* Fixed position to stay visible on scroll */
-  top: 70px; /* Adjust if needed to appear below the navbar */
-  left: 0;
-  background: #fff;
-  color: #333;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  width: 250px; /* Adjust as needed */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
 }
 
-/* Show menu when active */
-.burger-menu.active {
-  display: block;
+.logo {
+  font-size: 1.5rem;
+  margin-left: 10px;
 }
 
-.burger-menu h2 {
-  margin: 0;
-  padding: 10px;
-  background: #333;
-  color: #fff;
+.burger-button {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .burger-menu ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .burger-menu ul li {
-  border-bottom: 1px solid #ddd;
-}
-
-.burger-menu ul li button {
-  width: 100%;
   padding: 10px;
-  background: none;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-}
-
-.burger-menu ul li button:hover {
-  background-color: #f0f0f0;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import bookData from '../data/bookData';
+import './styles/Home.css';
 
 const Home = () => {
   const deals = bookData.flatMap(category => category.books)

@@ -1,7 +1,10 @@
 import React from 'react';
-
+import './styles/Cart.css';
 function Cart({ cart }) {
-  const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  const totalPrice = cart.reduce((total, item) => {
+    const price = item.discountedPrice ?? item.fullPrice;  // Use discountedPrice or fallback to fullPrice
+    return total + (price * item.quantity);
+  }, 0);
 
   return (
     <div className="cart">
@@ -11,7 +14,7 @@ function Cart({ cart }) {
       ) : (
         cart.map((item, index) => (
           <div key={index}>
-            <p>{item.title} - {item.quantity} x ${item.price.toFixed(2)}</p>
+            <p>{item.title} - {item.quantity} x ${item.discountedPrice ? item.discountedPrice.toFixed(2) : item.fullPrice.toFixed(2)}</p>
           </div>
         ))
       )}

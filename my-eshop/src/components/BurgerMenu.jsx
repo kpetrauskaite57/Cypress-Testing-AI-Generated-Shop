@@ -4,7 +4,7 @@ import './styles/BurgerMenu.css';
 
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
+  const navigate = useNavigate();  // Define navigate using useNavigate
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -12,9 +12,7 @@ const BurgerMenu = () => {
 
   return (
     <div className="burger-menu">
-      <button onClick={toggleMenu}>
-        {isOpen ? 'Close Menu' : 'Open Menu'}
-      </button>
+      <button className="burger-button" onClick={toggleMenu}>☰</button>
       {isOpen && (
         <ul>
           <li><button onClick={() => navigate('/')}>Home</button></li>
@@ -24,6 +22,6 @@ const BurgerMenu = () => {
       )}
     </div>
   );
-}
+};
 
 export default BurgerMenu;
