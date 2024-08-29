@@ -17,15 +17,15 @@
 }
 
 .navbar .logo {
-    flex: 1; /* Allow logo to take up space */
-    text-align: center; /* Center the text */
+    flex: 1;
+    text-align: center;
     font-size: 24px;
 }
 
 .navbar nav {
-    flex: 1; /* Allow nav items to take up space */
+    flex: 1;
     display: flex;
-    justify-content: flex-end; /* Align nav items to the right */
+    justify-content: flex-end;
 }
 
 .navbar a {
@@ -47,6 +47,6 @@
     cursor: pointer;
     position: absolute;
     top: 10px;
-    left: 20px; /* Ensure it doesn’t overlap with the header content */
+    left: 20px;
     z-index: 1001;
 }

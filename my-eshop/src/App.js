@@ -18,8 +18,9 @@ function App() {
   return (
     <Router>
       <div className="app">
+        {/* Use CSS to conditionally display Navbar or BurgerMenu */}
         <Navbar />
-        <BurgerMenu />
+        <BurgerMenu className="burger-menu" />
         <div className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />

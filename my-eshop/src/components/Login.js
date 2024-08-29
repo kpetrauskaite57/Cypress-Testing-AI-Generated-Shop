@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Login.css';  // Ensure this path is correct
+import './styles/Login.css';  // Ensure this path is correct
 
 function Login() {
   const [email, setEmail] = useState('');

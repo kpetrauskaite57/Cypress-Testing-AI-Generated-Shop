@@ -1,0 +1,48 @@
+/* BurgerMenu.css */
+
+.burger-menu {
+  display: none; /* Hidden by default, shown only on mobile screens */
+  position: absolute;
+  top: 70px; /* Adjust if needed to appear below the navbar */
+  left: 0;
+  background: #fff;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 250px; /* Adjust as needed */
+}
+
+/* When the menu is active, make it visible */
+.burger-menu.active {
+  display: block;
+}
+
+.burger-menu h2 {
+  margin: 0;
+  padding: 10px;
+  background: #333;
+  color: #fff;
+}
+
+.burger-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.burger-menu ul li {
+  border-bottom: 1px solid #ddd;
+}
+
+.burger-menu ul li button {
+  width: 100%;
+  padding: 10px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.burger-menu ul li button:hover {
+  background-color: #f0f0f0;
+}

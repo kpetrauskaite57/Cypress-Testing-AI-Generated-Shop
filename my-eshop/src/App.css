@@ -2,20 +2,35 @@
 
 /* Basic reset for margin and padding */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main app container styling */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Adjustments for main content area */
+.main-content {
+  flex: 1;
+}
+
+/* Hide BurgerMenu by default */
+.burger-menu {
+  display: none;
+}
+
+/* Show BurgerMenu on smaller screens and hide Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
   }
   
-  /* Main app container styling */
-  .app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  .burger-menu {
+    display: block;
   }
-  
-  /* Adjustments for main content area */
-  .main-content {
-    flex: 1;
-  }
-  
+}

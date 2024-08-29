@@ -17,12 +17,15 @@ const BookDetails = ({ addToCart }) => {
   return (
     <div className="book-details">
       <h1>{book.title}</h1>
-      <img src={book.image || 'https://via.placeholder.com/300'} alt={book.title} className="book-image" />
+      <img src={book.image} alt={book.title} className="book-image" />
       <p><strong>Author:</strong> {book.author}</p>
       <p><strong>Genre:</strong> {book.genre}</p>
       <p><strong>Year:</strong> {book.year}</p>
       <p><strong>Description:</strong> {book.description}</p>
-      <p><strong>Price:</strong> ${book.price.toFixed(2)}</p>
+      <p><strong>Price:</strong> 
+        <span className="discounted-price">${book.discountedPrice.toFixed(2)}</span>
+        <span className="full-price">${book.fullPrice.toFixed(2)}</span>
+      </p>
       <button className="add-to-cart" onClick={handleAddToCart}>Add to Cart</button>
     </div>
   );
