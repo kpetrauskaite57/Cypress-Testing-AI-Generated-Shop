@@ -4,6 +4,7 @@ import bookData from '../data/bookData'; // Corrected relative path
 import '../styles/BookDetails.css';
 
 
+
 const BookDetails = ({ addToCart }) => {
   const { id } = useParams();
   const book = bookData.flatMap(category => category.books).find(book => book.id === parseInt(id));
